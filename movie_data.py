@@ -1,6 +1,8 @@
 import requests
+import csv
 from bs4 import BeautifulSoup
-url = "https://www.imdb.com/title/tt0120737/"
+
+url = "https://www.imdb.com/title/tt0076759/"
 
 r = requests.get(url)
 soup = BeautifulSoup(r.content, 'html.parser')
@@ -36,12 +38,20 @@ print('ReleaseMonth:', ReleaseMonth)
 languages = lowerhalf.find("section", attrs={"data-testid":"Details"}).find("li", attrs={"data-testid":"title-details-languages"}).find_all("li")
 moneymatters = budget = lowerhalf.find("section", attrs={"data-testid":"BoxOffice"})
 budget = moneymatters.li.li.span.string.split(" ", 1)[0]
-
+print('Budget:',budget)
 for language in languages:
     print('Languages:', language.a.string)
 
-boxofficeUS = int(moneymatters.ul.contents[1].li.span.string[1:].replace(',',''))
-boxofficeWorld = int(moneymatters.ul.contents[3].li.span.string[1:].replace(',',''))
-print('BoxOffice:$',boxofficeUS + boxofficeWorld)
+# boxofficeUS = int(moneymatters.ul.contents[1].li.span.string[1:].replace(',',''))
+# boxofficeWorld = int(moneymatters.ul.contents[3].li.span.string[1:].replace(',',''))
+# print('BoxOffice:$',boxofficeUS + boxofficeWorld)
 
-print('Budget:',budget)
+
+header = ['Name', 'Rating', 'Director', 'Writers', 'Cast', 'Genres', 'ReleaseMonth', 'Budget', 'Language']
+Data = [soup.h1.string, ratings, director, writers[0].a.string, stars[0].a.string, genres[0].a.string, ReleaseMonth, budget, languages[0].a.string]
+with open('movies.csv', 'w', encoding='UTF8', newline='') as f:
+    writer = csv.writer(f)
+
+    writer.writerow(header)
+
+    writer.writerow(Data)
