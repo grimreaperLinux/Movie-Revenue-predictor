@@ -42,13 +42,13 @@ print('Budget:',budget)
 for language in languages:
     print('Languages:', language.a.string)
 
-# boxofficeUS = int(moneymatters.ul.contents[1].li.span.string[1:].replace(',',''))
-# boxofficeWorld = int(moneymatters.ul.contents[3].li.span.string[1:].replace(',',''))
-# print('BoxOffice:$',boxofficeUS + boxofficeWorld)
+boxofficeUS = int(moneymatters.ul.contents[1].li.span.string[1:].replace(',',''))
+boxofficeWorld = int(moneymatters.ul.contents[3].li.span.string[1:].replace(',',''))
+print('BoxOffice:$',boxofficeUS + boxofficeWorld)
 
 
-header = ['Name', 'Rating', 'Director', 'Writers', 'Cast', 'Genres', 'ReleaseMonth', 'Budget', 'Language']
-Data = [soup.h1.string, ratings, director, writers[0].a.string, stars[0].a.string, genres[0].a.string, ReleaseMonth, budget, languages[0].a.string]
+header = ['Name', 'Rating', 'Director', 'Writers', 'Cast', 'Genres', 'ReleaseMonth', 'Budget', 'Language', 'boxoffice']
+Data = [soup.h1.string, ratings, director, writers[0].a.string, stars[0].a.string, genres[0].a.string, ReleaseMonth, budget, languages[0].a.string, boxofficeUS + boxofficeWorld]
 with open('movies.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
 
