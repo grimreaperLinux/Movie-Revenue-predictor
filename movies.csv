@@ -1,2 +1,10 @@
-Name,Rating,Director,Writers,Cast,Genres,ReleaseMonth,Budget,Language
-Star Wars,8.6,George Lucas,George Lucas,Mark Hamill,Action,July,"$11,000,000",English
+Name,Rating,Director,Writers,Cast,Genres,ReleaseMonth,Budget,Language,boxoffice
+The Shawshank Redemption,9.3,Frank Darabont,Stephen King,Tim Robbins,Drama,October,25000000,English,28884504
+The Dark Knight,9.1,Christopher Nolan,Jonathan Nolan,Christian Bale,Action,July,185000000,English,1006102277
+The Godfather: Part II,9.0,Francis Ford Coppola,Francis Ford Coppola,Al Pacino,Crime,1979,13000000,English,47961029
+12 Angry Men,9.0,Sidney Lumet,Reginald Rose,Henry Fonda,Crime,April,350000,English,955
+Schindler's List,9.0,Steven Spielberg,Thomas Keneally,Liam Neeson,Biography,December,22000000,English,322161245
+The Lord of the Rings: The Return of the King,9.0,Peter Jackson,J.R.R. Tolkien,Elijah Wood,Action,February,94000000,English,1146436214
+Pulp Fiction,8.9,Quentin Tarantino,Quentin Tarantino,John Travolta,Crime,October,8000000,English,213928762
+The Lord of the Rings: The Fellowship of the Ring,8.9,Peter Jackson,J.R.R. Tolkien,Elijah Wood,Action,March,93000000,English,898094742
+"Il Buono, Il Brutto, Il Cattivo",8.8,Sergio Leone,Luciano Vincenzoni,Clint Eastwood,Adventure,April,1200000,Italian,25253887
